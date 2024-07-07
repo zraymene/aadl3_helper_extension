@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "AADL 3 Extension",
+    "description": "AADL 3 Auto-refresher / Input filler",
+    "version": "1.0",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "images.jpeg"
+    },
+
+    "background": {
+      "service_worker": "service_worker.js"
+    },
+
+    "icons" : {
+        "32": "images.jpeg",
+        "48": "images.jpeg"
+    },
+
+    "permissions": [
+      "activeTab",
+      "storage",
+      "tabs",
+      "scripting",
+      "webRequest",
+      "notifications",
+      "webNavigation"
+    ],
+
+    "host_permissions": [
+      "https://*/*",
+      "http://*/*"
+    ]
+
+
+  }

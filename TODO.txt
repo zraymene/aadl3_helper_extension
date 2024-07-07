@@ -1,0 +1,4 @@
+- fill phone number
+- trigger input checking
+- reenable copy, paste, ... 
+- trigger orange button click
