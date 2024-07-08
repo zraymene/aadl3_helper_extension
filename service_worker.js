@@ -95,9 +95,9 @@ function FillForms( entry ) {
     document.title = entry.name;
 
     // enable back: copy, cut, paste anc context menu
-    const body_html_content = structuredClone( document.body.innerHTML );
+    /*const body_html_content = structuredClone( document.body.innerHTML );
     document.body = document.body = document.createElement("body");
-    document.body.innerHTML = body_html_content;
+    document.body.innerHTML = body_html_content;*/
 
     // click on the button
     const orange_button = document.getElementById( "A14" );
