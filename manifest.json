@@ -1,20 +1,22 @@
 {
     "manifest_version": 3,
-    "name": "AADL 3 Extension",
-    "description": "AADL 3 Auto-refresher / Input filler",
+    "name": "AADL 3 Autobot",
+    "description": "AADL 3 Autobot / Input filler",
     "version": "1.0",
     "action": {
       "default_popup": "popup.html",
-      "default_icon": "images.jpeg"
+      "default_icon": "res/icon48.png"
     },
 
     "background": {
       "service_worker": "service_worker.js"
     },
 
-    "icons" : {
-        "32": "images.jpeg",
-        "48": "images.jpeg"
+    "icons": {
+      "16":  "res/icon16.png",
+      "32":  "res/icon32.png",
+      "48":  "res/icon48.png",
+      "128": "res/icon128.png"
     },
 
     "permissions": [

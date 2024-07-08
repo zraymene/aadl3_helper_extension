@@ -1,5 +1,11 @@
-//const url = "https://aadl3inscription2024.dz/";
-const url = "http://localhost:8000/";
+const url = "https://www.aadl3inscription2024.dz/";
+//const url = "http://localhost:8000/";
+
+// first run
+chrome.runtime.onInstalled.addListener((details) => { 
+    console.log( "Installed..." );
+    PresistEntries( [] );
+})
 
 // listen to network errors and filter them
 chrome.webRequest.onErrorOccurred.addListener( onNetworkError, { urls: [url, url + "    */"] } );
@@ -8,10 +14,11 @@ function onNetworkError( details ) {
 
         // is it from the concerned tabs ?
         let target_entry = GetEntryByTabID( entries, details.tabId );
-        if( target_entry === null ) 
+        if( target_entry === null || target_entry === undefined ) 
             return;
 
         // is the entry still running
+        console.log( target_entry );
         if( !target_entry.running )
             return;
 
@@ -39,11 +46,12 @@ function onSuccess( details ) {
 
         // is it from the concerned tabs ?
         let target_entry = GetEntryByTabID( entries, details.tabId );
-        if( target_entry === null ) 
+        if( target_entry === null || target_entry === undefined ) 
             return;
 
         // stop it from refreshing
         target_entry.running = false;
+        target_entry.success = true;
         PresistEntries( entries );
 
         // notification
@@ -86,36 +94,38 @@ chrome.tabs.onRemoved.addListener( (tabId, _ ) => {
 function FillForms( entry ) {
     document.title = entry.name;
 
-    setInterval( ()  => {
-        // enable back: copy, cut, paste anc context menu
-        document.body.oncontextmenu  = null
-        document.body.oncopy  = null
-        document.body.oncut   = null
-        document.body.onpaste = null
-    }, 500)
+    // enable back: copy, cut, paste anc context menu
+    const body_html_content = structuredClone( document.body.innerHTML );
+    document.body = document.body = document.createElement("body");
+    document.body.innerHTML = body_html_content;
 
+    // click on the button
+    const orange_button = document.getElementById( "A14" );
+    orange_button.click();
+    console.log( "Clicked !" );
+    
+    // wait 1 sec
+    setTimeout( ()  => {
+        const select_wilaya   = document.getElementById( "A17" );
+        const input_nin       = document.getElementById( "A22" );
+        const input_nss       = document.getElementById( "A27" );
+        const input_telephone = document.getElementById( "A13" );
+        //const accept_checkbox = document.getElementById( "A91_1" );
+    
+        input_nin.oncontextmenu = null;
+    
+        console.log( input_nin )
+        console.log( input_nss )
+        console.log( input_telephone )
+    
+        // change values
+        select_wilaya.value   = parseInt( entry.wilaya ) + 1;
+        input_nin.value       = entry.nin;
+        input_nss.value       = entry.nss;
+        //input_telephone.value = entry.telephone;
 
-    console.log(   document.body.oncontextmenu )
-
-    const select_wilaya   = document.getElementById( "A17" );
-    const input_nin       = document.getElementById( "A22" );
-    const input_nss       = document.getElementById( "A27" );
-    const input_telephone = document.getElementById( "A13" );
-    //const accept_checkbox = document.getElementById( "A91_1" );
-
-    input_nin.oncontextmenu = null;
-
-    console.log( input_nin )
-    console.log( input_nss )
-    console.log( input_telephone )
-
-    // change values
-    select_wilaya.value   = parseInt( entry.wilaya ) + 1;
-    input_nin.value       = entry.nin;
-    input_nss.value       = entry.nss;
-    input_telephone.value = entry.telephone;
-
-
+        console.log( "Form filled !" );
+    }, 1000 )
 }
 
 // --------- Storage utility ----------
@@ -123,7 +133,7 @@ function LoadEntries( callback ) {
     chrome.storage.session.get( ["entries"], 
         (result) =>  { 
             let entries = result.entries
-            if( entries === null ) 
+            if( entries === null || entries === undefined ) 
                 return;
 
             callback( entries );

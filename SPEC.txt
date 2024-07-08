@@ -6,12 +6,6 @@
         NSS: XXXXXXXXX
         TEL: XXXXXXXXX
 
-        NOM: ZEROUAL Adem
-        W: XXXXXXXXXXX
-        NiN: XXXXXXXXXX
-        NSS: XXXXXXXXX
-        TEL: XXXXXXXXX
-
 - Display list of entries and its status and launch button
     - open a new tab with the title of entry name
     - keeps refreshing the tab until we get a non-error response (200 OK)
@@ -19,7 +13,7 @@
     - Fill the form
     - Warn the user ( sound + tab notification ) OR Toggle on tab
 
-- BARGE LAUNCH: launchs all entries simentensly
+- BARAGE LAUNCH: launchs all entries simentensly
 
 
 

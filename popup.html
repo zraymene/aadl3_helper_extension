@@ -1,23 +1,96 @@
 <html>
     <style>
+        body {
+            font: "arial";
+        }
+        img {
+            display: block;
+            margin: -15px auto;
+        }
+        h2 {
+            margin: 5px 0;
+            color: #1d2f77;
+        }
+        ol{ 
+            padding: 5px;
+            border: solid;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: #1d2f77;
+
+            max-height: 50vh;
+            overflow: auto;
+        }
         li {
             display: flex;
             flex-direction: row;
-            gap: 10px;
-            align-items: start;
+            gap: 5px;
+            align-items: center;
             justify-content: start;
+            margin: 0;
+            padding: 2px;
         }
-        li span { flex : 2;}
+        li span { 
+            flex : 2;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        input[type=file],
+        button {
+            background-color: #1d2f77;
+            color: white;
+            padding: 8px;
+
+            border: none;
+            border-radius: 5px;
+        }
+        button.stop:hover,
+        button:hover { background-color: #354170; }
+
+        button.start:disabled,
+        button.stop:disabled,
+        button:disabled,
+        button[disabled]{
+            background-color: #7f87aa;
+        }
+
+        ol button {
+            font-size: 10px;
+        }
+
+        button.start {
+            background-color: rgb(32, 226, 32);
+            font-weight: bold;
+        }
+        button.start:hover{ background-color: rgb(152, 255, 152); }
+
+        button.stop {
+            background-color: rgb(255, 55, 55);
+            font-weight: bold;
+        }
+        button.stop:hover{ background-color: rgb(255, 156, 156); }
+
+        span.stopped { color: rgb(255, 55, 55); }
+        span.running { color: orange;}
+        span.success { color: rgb(32, 226, 32); }
+
+
     </style>
     <body>
-        <h3>Load entries:</h3>
+        <img width="80" src="res/icon.jpeg" >
+        <hr>
+        <h2>Load entries:</h2>
         <input type="file">
         <hr>
-            <button id="start_all_btn" disabled>Start ALL</button>
-            <button id="stop_all_btn" disabled>Stop All</button>
-        <hr>
+        <h2>Entries list:</h2>
         <ol></ol>
-        <script src="popup.js" ></script>
+        <hr>
+        <div style="display: flex; gap: 8px; justify-content: center;">
+            <button id="start_all_btn" class="start" disabled>Start ALL</button>
+            <button id="stop_all_btn"  class="stop" disabled>Stop All</button>
+        </div>
 
+        <script src="popup.js" ></script>
     </body>
 </html>

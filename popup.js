@@ -9,6 +9,7 @@ function NewEntry( name ) {
 
         tab_id:     -1,
         running:    false,
+        success:    false,
     }
 
     entries.push( entry );
@@ -95,11 +96,12 @@ function UpdateUI() {
     {
         /*
             <li>
-                <button>VIEW</button>
                 <span>ZEROUAL Aymene</span>
+                <button>VIEW</button>
                 <button>START</button>
                 <button>STOP</button>
             </li>
+            <hr>
         */
         const view_btn = document.createElement( "button" );
         view_btn.innerHTML = "VIEW";
@@ -107,26 +109,34 @@ function UpdateUI() {
         
         const span = document.createElement( "span" );
         span.innerHTML = entry.name;
+        
+        let name_state_class = "running";
+        if( entry.success )
+            name_state_class = "success";
+        else if( !entry.running )
+            name_state_class = "stopped";
+        span.classList.add( name_state_class )
 
         const start_btn = document.createElement( "button" );
         start_btn.innerHTML = "START";
         start_btn.id        = "start_btn_" + i; 
         start_btn.disabled  = entry.running;
-        start_btn.dataset.id_entry = i;
+        start_btn.classList.add( "start" );
 
         const stop_btn = document.createElement( "button" );
         stop_btn.innerHTML = "STOP";
         stop_btn.id        = "stop_btn_" + i; 
         stop_btn.disabled  = !entry.running;
-        stop_btn.dataset.id_entry = i;
+        stop_btn.classList.add( "stop" );
 
         const li = document.createElement( "li" );
-        li.appendChild( view_btn );
         li.appendChild( span );
+        li.appendChild( view_btn );
         li.appendChild( start_btn );
         li.appendChild( stop_btn );
 
         ol.appendChild( li );
+        ol.appendChild( document.createElement( "hr" ) );
 
         if( entry.running )
             atleast_one_running = true;
@@ -151,10 +161,11 @@ function UpdateUI() {
         start_all_btn.disabled = true;
 }
  
-//const url = "https://aadl3inscription2024.dz/";
-const url = "http://localhost:8000/";
+const url = "https://www.aadl3inscription2024.dz/";
+//const url = "http://localhost:8000/";
 function StartTask( entry ) {
     entry.running = true;
+    entry.success = false;
 
     // tab already open just reload it
     if( entry.tab_id !== -1 ) {
