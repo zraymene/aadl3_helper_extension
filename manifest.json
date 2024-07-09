@@ -7,9 +7,13 @@
       "default_popup": "popup.html",
       "default_icon": "res/icon48.png"
     },
+    "author": {
+      "name":  "ZEROUAL Aymene",
+      "email": "aymenezeroual@gmail.com"
+    },
 
     "background": {
-      "service_worker": "service_worker.js"
+      "service_worker": "js/service_worker.js"
     },
 
     "icons": {

@@ -1,2 +1,4 @@
+- Github readme
+
 - fill phone number
 - trigger input checking

@@ -18,7 +18,6 @@ function onNetworkError( details ) {
             return;
 
         // is the entry still running
-        console.log( target_entry );
         if( !target_entry.running )
             return;
 
@@ -40,6 +39,7 @@ function onNetworkError( details ) {
     } )
 }
 
+// Page loaded
 chrome.webNavigation.onCompleted.addListener( onSuccess, { urls: [url] } )
 function onSuccess( details ) {
     LoadEntries( (entries) => {
@@ -74,6 +74,11 @@ function onSuccess( details ) {
             args:   [ target_entry ]
         })
     } )
+}
+function GetEntryByTabID( entries, tab_id ) {
+    for( entry of entries )
+        if( entry.tab_id === tab_id )
+            return entry;
 }
 
 // delete closed tabs
@@ -143,10 +148,4 @@ function PresistEntries( entries ) {
     chrome.storage.session.set( {
         entries: entries
     } )    
-}
-
-function GetEntryByTabID( entries, tab_id ) {
-    for( entry of entries )
-        if( entry.tab_id === tab_id )
-            return entry;
 }

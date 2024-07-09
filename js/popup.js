@@ -104,7 +104,8 @@ function UpdateUI() {
             <hr>
         */
         const view_btn = document.createElement( "button" );
-        view_btn.innerHTML = "VIEW";
+        view_btn.dataset.trans = "VIEW"
+        view_btn.innerHTML     = TRANSLATE( "VIEW" );
         view_btn.disabled  = ( entry.tab_id === -1 )? true : false;
         
         const span = document.createElement( "span" );
@@ -118,13 +119,15 @@ function UpdateUI() {
         span.classList.add( name_state_class )
 
         const start_btn = document.createElement( "button" );
-        start_btn.innerHTML = "START";
+        start_btn.dataset.trans = "START"
+        start_btn.innerHTML     = TRANSLATE( "START" );
         start_btn.id        = "start_btn_" + i; 
         start_btn.disabled  = entry.running;
         start_btn.classList.add( "start" );
 
         const stop_btn = document.createElement( "button" );
-        stop_btn.innerHTML = "STOP";
+        stop_btn.dataset.trans = "STOP"
+        stop_btn.innerHTML     = TRANSLATE( "STOP" );
         stop_btn.id        = "stop_btn_" + i; 
         stop_btn.disabled  = !entry.running;
         stop_btn.classList.add( "stop" );
@@ -196,4 +199,10 @@ function PresistEntries() {
     chrome.storage.session.set( {
         entries: entries
     } )    
+}
+
+// Github icon href 
+document.getElementsByTagName( "svg" )[0].onclick = (e) => {
+    console.log("dd")
+    chrome.tabs.create( { url: "www.github.com/zraymene" } )
 }
