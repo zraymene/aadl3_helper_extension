@@ -204,5 +204,5 @@ function PresistEntries() {
 // Github icon href 
 document.getElementsByTagName( "svg" )[0].onclick = (e) => {
     console.log("dd")
-    chrome.tabs.create( { url: "www.github.com/zraymene" } )
+    chrome.tabs.create( { url: "https://www.github.com/zraymene" } )
 }
