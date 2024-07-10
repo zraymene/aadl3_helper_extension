@@ -90,7 +90,7 @@ function UpdateUI() {
     let atleast_one_stopped = false;
 
     const ol = document.getElementsByTagName( "ol" )[0];
-    ol.innerHTML = ''; // clear
+    ol.innerHTML = ""; // clear
 
     for( const [i, entry] of entries.entries() ) 
     {

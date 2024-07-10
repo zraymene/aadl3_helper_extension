@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "AADL 3 Autobot",
-    "description": "AADL 3 Autobot / Input filler",
+    "name": "AADL 3 Helper Extension",
+    "description": "AADL 3 Auto: Refresh and Input filler",
     "version": "1.0",
     "action": {
       "default_popup": "popup.html",
@@ -37,6 +37,5 @@
       "https://*/*",
       "http://*/*"
     ]
-
 
   }

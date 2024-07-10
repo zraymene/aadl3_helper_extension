@@ -3,8 +3,9 @@
         <meta charset="UTF-8">
     </head>
     <style>
-        body {
-            font: "arial";
+        html {
+            border-radius: 5px;
+            width: 300px;
         }
         img {
             display: block;
@@ -21,8 +22,10 @@
             border-width: 1px;
             border-color: #1d2f77;
 
-            max-height: 50vh;
+            max-height: 200px;
             overflow: auto;
+
+            flex: 2;
         }
         li {
             display: flex;
@@ -110,8 +113,6 @@
 
         <h2 data-trans="ENTRIES_LIST">Entries list:</h2>
         <ol></ol>
-
-        <hr>
 
         <div style="display: flex; gap: 8px; justify-content: center;">
             <button id="start_all_btn" class="start" data-trans="START_ALL" disabled>Start ALL</button>
