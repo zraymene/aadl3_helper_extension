@@ -2,7 +2,7 @@
 AAD3 Helper Extension is an open-source Chrome extension which automates the registration process of the AAD3 housing program. 
 
 > [!CAUTION]
-> The purpose of this extension is to minimize the time spent on the website (auto filling) & lowering the rates of errors while typing. The extension mimics the human actions of refreshing and input filling only by using the public API of [Chrome Extension](https://developer.chrome.com/docs/extensions) which allows the enhancing of the browsing experience. It doesn't communicate in any means with the website nor it tries to exploit any vulnerability. 
+> The purpose of this extension is to minimize the time spent on the website (auto filling) & lowering the rates of errors while typing. The extension mimics the human actions of refreshing and input filling only, by using the public API of [Chrome Extension](https://developer.chrome.com/docs/extensions) which allows the enhancing of the browsing experience. It doesn't communicate in any means with the website nor it tries to exploit any vulnerability. 
 
 <p align="center">
   <img height="460" src="res/extension_preview.PNG">
@@ -11,15 +11,10 @@ AAD3 Helper Extension is an open-source Chrome extension which automates the reg
 ## Features:
 
 - Load a pre-defined list of credentials of multiple individuals and the ability to manage them individually or in bulk.
-
 - Opens a new tab assigned to each entry and keeps refreshing until there is a response from the server.
-
 - Notification on a successful load (no need to keep checking)
-
 - Automatically opens a session (clicks on the orange box)
-
--  Automatically fills the form (Wilaya, NIN, NSS) from the entry which was assigned to the tab.
-
+-  Automatically fills the form (**Wilaya**, **NIN**, **NSS**) from the entry which was assigned to the tab.
 - Multi-language support (English, French and Arabic)
 
 ## Limitations:
@@ -35,15 +30,13 @@ The extension must be loaded on Developer mode. First, Download and unzip the pr
 1. Go to the Extensions page by entering `chrome://extensions` in a new tab. (By design chrome:// URLs are not linkable.)
 	- Alternatively, click the Extensions menu puzzle button and select Manage Extensions at the bottom of the menu.
 	- Or, click the Chrome menu, hover over More Tools, then select Extensions.
-
 2. Enable Developer Mode by clicking the toggle switch next to Developer mode.
-
 3. Click the Load unpacked button and select the extension directory. 
 ```
 If the steps were followed correctly, the extension will pop on the list as follows:
 
 <p align="center">
-  <img width="460" src="res/extension_dev.png">
+  <img width="460" src="res/extension_dev.PNG">
 </p>
 
 ## How to use:
@@ -62,11 +55,8 @@ NSS: 4444444444441
 TEL: 0123456789
 ```
 2. Open the extension and upload the entries file. The list of entries will be generated:
-
 <p align="center">
-  <img height="400" src="res/extension_loaded_entries.png">
+  <img height="400" src="res/extension_loaded_entries.PNG">
 </p>
-
-3. Now you have the option to launch all entries or individually by clicking on the `Start` button
-
+3. Now you have the option to launch all entries or individually.
 4. Now wait until the server respond. When it does, you will be notified and the tab will be activated.

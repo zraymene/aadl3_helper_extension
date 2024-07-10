@@ -1,6 +1,6 @@
 - INPUT: load config that contains list of candidates
     - Config file for each entry ex:
-        NOM: ABC DC
+        NOM: ZEROUAL Aymene
         W: XXXXXXXXXXX
         NiN: XXXXXXXXXX
         NSS: XXXXXXXXX
