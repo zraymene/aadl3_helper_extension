@@ -59,4 +59,5 @@ TEL: 0123456789
   <img height="400" src="res/extension_loaded_entries.PNG">
 </p>
 3. Now you have the option to launch all entries or individually.
+
 4. Now wait until the server respond. When it does, you will be notified and the tab will be activated.
