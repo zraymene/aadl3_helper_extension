@@ -1,5 +1,5 @@
-# AAD3 Helper Extension
-AAD3 Helper Extension is an open-source Chrome extension which automates the registration process of the AAD3 housing program. 
+# AADL3 Helper Extension
+AADL3 Helper Extension is an open-source Chrome extension which automates the registration process of the AADL3 housing program. 
 
 > [!CAUTION]
 > The purpose of this extension is to minimize the time spent on the website (auto filling) & lowering the rates of errors while typing. The extension mimics the human actions of refreshing and input filling only, by using the public API of [Chrome Extension](https://developer.chrome.com/docs/extensions) which allows the enhancing of the browsing experience. It doesn't communicate in any means with the website nor it tries to exploit any vulnerability. 
