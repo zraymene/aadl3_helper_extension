@@ -19,8 +19,6 @@ AADL3 Helper Extension is an open-source Chrome extension which automates the re
 
 ## Limitations:
 
-- Phone number automatic filling is disabled. `Workaround`: manual input.
-
 -  Input validation doesn't get triggered automatically. `Workaround`: remove a digit the re-add it
 
 ## How to install:
