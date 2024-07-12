@@ -127,7 +127,7 @@ function FillForms( entry ) {
         select_wilaya.value   = parseInt( entry.wilaya ) + 1;
         input_nin.value       = entry.nin;
         input_nss.value       = entry.nss;
-        //input_telephone.value = entry.telephone;
+        input_telephone.value = entry.tel;
 
         console.log( "Form filled !" );
     }, 1000 )
