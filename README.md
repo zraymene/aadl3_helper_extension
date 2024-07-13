@@ -14,12 +14,12 @@ AADL3 Helper Extension is an open-source Chrome extension which automates the re
 - Opens a new tab assigned to each entry and keeps refreshing until there is a response from the server.
 - Notification on a successful load (no need to keep checking)
 - Automatically opens a session (clicks on the orange box)
--  Automatically fills the form (**Wilaya**, **NIN**, **NSS**) from the entry which was assigned to the tab.
+-  Automatically fills the form (**Wilaya**, **NIN**, **NSS** and **Telephone**) from the entry which was assigned to the tab.
 - Multi-language support (English, French and Arabic)
 
-## Limitations:
+## Note:
 
--  Input validation doesn't get triggered automatically. `Workaround`: remove a digit the re-add it
+-  Input validation doesn't get triggered automatically. However, that won't block the submission of the form. So no further action is required. [#2](https://github.com/zraymene/aadl3_helper_extension/issues/2)
 
 ## How to install:
 The extension must be loaded on Developer mode. First, Download and unzip the project from Github page: `Code > Download ZIP`. Then follow  these steps provided by [Chrome Official Docs](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world):
